@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <title>Responsive header</title>
+  <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <!-- icon -->
+    <div class="icon">
+      <img src="./img/airplane-takeoff.svg" alt="logo">
+    </div>
+    <!-- nav -->
+    <nav class="nav">
+      <a href="#">Vuelos</a>
+      <a href="#">Paquetes</a>
+      <a href="#">Alojamiento</a>
+      <a href="#">Actividades</a>
+      <a href="#">Traslados</a>
+    </nav>
+    <!-- options -->
+    <div class="options">
+      <span class="search">
+        <img src="./img/search-outline.svg" alt="search icon">
+      </span>
+      <span class="cart">
+        <a href="#ex1" rel="modal:open">
+          <img src="./img/cart-outline.svg" alt="cart icon">
+        </a>
+      </span>
+      <button class="button">
+        <img src="./img/person-outline.svg" alt="button">
+        mi cuenta
+      </button>
+    </div>
+    <!-- search bar  -->
+    <span class="searchBar">
+      <input type="text" placeholder="Buscar">
+      <img src="./img/search-outline.svg" alt="search icon">
+    </span>
+    <!-- hamburger menu -->
+    <div class="hamburger">
+      <div class="hamburgerMenu">
+        <a href="#">Vuelos</a>
+        <a href="#">Paquetes</a>
+        <a href="#">Alojamiento</a>
+        <a href="#">Actividades</a>
+        <a href="#">Traslados</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- modal -->
+  <div id="ex1" class="modal">
+    <p>Mi carrito de compras</p>
+    <a href="#" rel="modal:close">Close</a>
+  </div>
+
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+</body>
+
+</html>

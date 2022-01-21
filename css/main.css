@@ -1,0 +1,176 @@
+.header {
+  background-color: #82c09a;
+  height: fit-content;
+  padding: 20px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "hamburger  icon options"
+    "searchBar searchBar searchBar";
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    grid-template-areas: "icon nav options";
+    grid-template-columns: 0.5fr 2fr 2fr;
+    align-content: flex-start;
+  }
+}
+
+/************** icon ***************/
+
+.icon {
+  grid-column: icon;
+  grid-row: icon;
+  height: fit-content;
+  justify-self: center;
+}
+.icon img {
+  width: 60px;
+}
+
+/************** nav ***************/
+.nav {
+  display: none;
+  justify-content: space-around;
+  height: fit-content;
+  grid-column: nav;
+  grid-row: nav;
+  transition: all 0.3s ease-in-out;
+}
+.nav a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+}
+
+.nav a:hover {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+@media only screen and (min-width: 768px) {
+  .nav {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/************** options ***************/
+.options {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  grid-column: options;
+  height: fit-content;
+}
+
+.options img {
+  width: 30px;
+}
+
+.options .search,
+.options .button {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .options .search,
+  .options .button {
+    display: flex;
+    border: none;
+    color: #000;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+  }
+  .options img {
+    width: 25px;
+  }
+}
+
+/************** search bar ***************/
+.searchBar {
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  grid-column: searchBar;
+}
+
+.searchBar > input {
+  border: none;
+  width: 100%;
+  border-radius: 8px 0 0 8px;
+}
+
+.searchBar img {
+  width: 20px;
+  background-color: #fff;
+  border-radius: 0 8px 8px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .searchBar {
+    display: none;
+  }
+}
+
+/* hamburger */
+
+.hamburger {
+  grid-column: hamburger;
+  grid-row: hamburger;
+  width: 30px;
+  background-color: #fff;
+  height: 4px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.hamburger .hamburgerMenu {
+  margin-top: 20px;
+  display: flex;
+  background-color: rgba(24, 26, 27, 0.8);
+  flex-direction: column;
+  width: 200px;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: none;
+}
+.hamburger .hamburgerMenu.show {
+  display: flex;
+}
+.hamburgerMenu > a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+.hamburgerMenu > a:hover {
+  border: 1px solid #f2f2f2;
+}
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  height: 4px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  right: 0;
+}
+
+.hamburger::before {
+  top: -8px;
+  width: 20px;
+}
+
+.hamburger::after {
+  top: 8px;
+  width: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}
